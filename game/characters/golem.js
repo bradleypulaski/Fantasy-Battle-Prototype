@@ -70,6 +70,13 @@ function golem() {
 
     this.abilities = {
         "rockslide": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var rng = lrng();
             while (rng > 0) {
                 var damage = 15;
@@ -81,6 +88,13 @@ function golem() {
             }
         },
         "stonearmor": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 10) {
                 return false;
             }
@@ -89,6 +103,13 @@ function golem() {
             target.armor += 500;
         },
         "explode": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 20) {
                 return false;
             }
@@ -99,8 +120,8 @@ function golem() {
             for (key in party) {
                 party[key].takeDamage("earth", damage);
             }
-            this.dead = 1;
-            this.health = 0;
+            this.parent.dead = 1;
+            this.parent.health = 0;
         }
     }
     this.abilities.status = this.status;

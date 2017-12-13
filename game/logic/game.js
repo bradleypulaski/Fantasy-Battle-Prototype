@@ -207,6 +207,8 @@ $(function () {
 
 
     $(document).on('click', '.ability', function () { // bind event to dynamic elements
+
+
         var labilities = lexicon.abilities;
 
         var abilityname = $(this).attr("data-ability");
@@ -227,11 +229,16 @@ $(function () {
         if (scope == "AOE") {
 
             if (type == "offensive") {
+                var audio = new Audio('../game/audio/sfx/swordclash.mp3');
+                audio.play();
+
                 targets = "enemy team";
 
                 character.abilities[abilityname](enemy.party.party);
             }
             if (type == "support") {
+                                var audio = new Audio('../game/audio/sfx/buff.ogg');
+                audio.play();
                 targets = "ally team";
 
                 character.abilities[abilityname](player.party.party);
@@ -343,6 +350,8 @@ $(function () {
 
     });
     $(document).on('click', '.enemytarget', function () { // bind event to dynamic elements
+        var audio = new Audio('../game/audio/sfx/swordclash.mp3');
+        audio.play();
         var id = $(this).attr("data-id");
         currenttarget = id;
         $(".enemytarget").each(function () {
@@ -350,6 +359,8 @@ $(function () {
         });
     })
     $(document).on('click', '.allytarget', function () { // bind event to dynamic elements
+        var audio = new Audio('../game/audio/sfx/buff.ogg');
+        audio.play();
         var id = $(this).attr("data-id");
         currenttarget = id;
         $(".allytarget").each(function () {
@@ -389,5 +400,10 @@ $(function () {
 
         $("#currentstatus").css("display", "block");
         $("#currentstatus").html(html);
+    });
+    $(document).on('mouseleave', '.characterpanel', function () { // bind event to dynamic elements
+
+        $("#currentstatus").css("display", "none");
+        $("#currentstatus").html("");
     });
 });

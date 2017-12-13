@@ -74,6 +74,13 @@ function darkelf() {
 
     this.abilities = {
         "cutlassstrike": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 120;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -81,6 +88,13 @@ function darkelf() {
             target.takeDamage("dark", damage);
         },
         "darkblizzard": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 5) {
                 return false;
             }
@@ -98,6 +112,13 @@ function darkelf() {
             target.takeDamage("dark", damage);
         },
         "icyterror": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 10) {
                 return false;
             }

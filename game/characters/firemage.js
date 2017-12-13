@@ -78,6 +78,13 @@ function firemage() {
 
     this.abilities = {
         "flameshot": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 150;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -85,6 +92,13 @@ function firemage() {
             target.takeDamage("fire", damage);
         },
         "incinerate": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 10) {
                 return false;
             }
@@ -102,6 +116,13 @@ function firemage() {
             target.status[burning.name] = burning;
         },
         "lightningbolt": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 20) {
                 return false;
             }

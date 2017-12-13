@@ -74,6 +74,13 @@ function angel() {
 
     this.abilities = {
         "holylight": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 150;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -81,6 +88,13 @@ function angel() {
             target.takeDamage("light", damage);
         },
         "wingguard": function () {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 10) {
                 return false;
             }
@@ -92,6 +106,13 @@ function angel() {
             this.parent.armor += 200;
         },
         "revive": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 20) {
                 return false;
             }

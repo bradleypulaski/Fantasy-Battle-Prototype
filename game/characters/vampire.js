@@ -78,6 +78,13 @@ function vampire() {
 
     this.abilities = {
         "siphon": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 100;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -92,6 +99,13 @@ function vampire() {
             this.parent.health += heal;
         },
         "mistform": function () {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 5) {
                 return false;
             }
@@ -104,6 +118,13 @@ function vampire() {
             this.parent.status[invisibility.name] = invisibility;
         },
         "soulsnare": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 15) {
                 return false;
             }

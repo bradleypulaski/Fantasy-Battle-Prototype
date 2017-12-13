@@ -54,6 +54,7 @@ function party() {
 
     this.startTurn = function () {
         var key;
+        this.moveQeue = [];
         for (key in this.party) {
             var character = this.party[key];
 
@@ -127,7 +128,7 @@ function party() {
             var n;
             for (n in c.status) {
                 if (c.status[n].turns < 1) {
-                     c.removeStatus(c.status[n].name);
+                    c.removeStatus(c.status[n].name);
                 }
             }
         }
@@ -147,7 +148,7 @@ function party() {
                 c.health = c.health - dmg;
 
                 if (this.party[key].health < 1) {
-                    this.party[key].death = 1;
+                    this.party[key].dead = 1;
                 }
             }
         }
@@ -193,6 +194,9 @@ function party() {
 
             if (c.status.hasOwnProperty("haste")) {
                 c.status.haste.turns -= 1;
+                if (c.status.haste.turns < 1) {
+                    c.removeStatus("haste");
+                }
             }
         }
     }

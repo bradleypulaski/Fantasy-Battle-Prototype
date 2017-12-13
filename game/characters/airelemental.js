@@ -78,6 +78,13 @@ function airelemental() {
 
     this.abilities = {
         "gust": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 80;
             this.parent.magic += 12.5;
             if (this.status.hasOwnProperty('slow')) {
@@ -86,6 +93,13 @@ function airelemental() {
             target.takeDamage("air", damage);
         },
         "haste": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 25) {
                 return false;
             }
@@ -104,6 +118,13 @@ function airelemental() {
             }
         },
         "hurricane": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 25) {
                 return false;
             }

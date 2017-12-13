@@ -50,7 +50,7 @@
         "turns": 1
     },
     "illusion": {
-        "description": "character uses random attack on random target, including allies",
+        "description": "character has 50% chance of cancelling attack",
         "type": "ailment",
         "turns": 1
     }

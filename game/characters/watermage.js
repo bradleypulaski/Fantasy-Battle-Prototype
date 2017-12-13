@@ -78,6 +78,14 @@ function watermage() {
 
     this.abilities = {
         "waterjet": function (target) {
+
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
+
             var damage = 110;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -85,18 +93,32 @@ function watermage() {
             target.takeDamage("water", damage);
         },
         "illusion": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 20) {
                 return false;
             }
             this.parent.magic -= 20;
             var illusion = new status();
             illusion.name = "illusion";
-            illusion.description = "character uses random attack on random target, including allies";
+            illusion.description = "character has 50% chance of cancelling attack";
             illusion.turns = 1;
             illusion.type = "ailment";
             target.status[illusion.name] = illusion;
         },
         "invisibility": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 20) {
                 return false;
             }
@@ -109,6 +131,13 @@ function watermage() {
             target.status[invisibility.name] = invisibility;
         },
         "blizzard": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 30) {
                 return false;
             }

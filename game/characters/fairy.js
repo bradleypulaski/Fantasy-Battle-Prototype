@@ -53,7 +53,7 @@ function fairy() {
             damage = Math.floor(damage * 1.5);
         }
         this.health -= damage;
-                if (this.health <= 0) {
+        if (this.health <= 0) {
             this.health = 0;
             this.dead = 1;
         }
@@ -80,7 +80,7 @@ function fairy() {
         } else {
             this.health -= damage;
         }
-                if (this.health <= 0) {
+        if (this.health <= 0) {
             this.health = 0;
             this.dead = 1;
         }
@@ -88,6 +88,13 @@ function fairy() {
 
     this.abilities = {
         "swarm": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var rng = lrng();
             while (rng > 0) {
                 var damage = 20;
@@ -99,18 +106,32 @@ function fairy() {
             }
         },
         "pheramones": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 12) {
                 return false;
             }
             this.parent.magic -= 12;
             var illusion = new status();
             illusion.name = "illusion";
-            illusion.description = "character uses random attack on random target, including allies";
+            illusion.description = "character has 50% chance of cancelling attack";
             illusion.turns = 1;
             illusion.type = "ailment";
             target.status[illusion.name] = illusion;
         },
         "manabloom": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 30) {
                 return false;
             }

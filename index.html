@@ -52,7 +52,7 @@
         <div id="game">
             <div id="enemy"></div> 
             <div id="currentstatus"></div> 
-            
+
             <div id="player"></div> 
             <div id="gamelog"></div> 
         </div>
@@ -60,6 +60,10 @@
         <div id="abilities">
             test
         </div>
+
+        <audio autoplay loop>
+             <source src="game/audio/bg.mp3" type="audio/mpeg">
+         </audio> 
 
         <style>
 
@@ -96,19 +100,19 @@
                 top: 200px;
                 left: 0;
                 width: 20%;
-                 background-color: black;
-                 display: none;
-             }
-             #currentstatus h1 {
-                   font-family: MiddleEarth;
+                background-color: black;
+                display: none;
+            }
+            #currentstatus h1 {
+                font-family: MiddleEarth;
                 color: #f6fcb5;  
-             }
-             #currentstatus h3 {
-                 color: #f6fcb5;  
-             }
-             #currentstatus p {
-                 color: white;  
-             }
+            }
+            #currentstatus h3 {
+                color: #f6fcb5;  
+            }
+            #currentstatus p {
+                color: white;  
+            }
             #gamelog {
                 position: fixed;
                 top: 0;
@@ -118,8 +122,8 @@
                 background-color: black;
                 border-left: 1px solid lightgoldenrodyellow;
                 overflow: scroll;
-                    overflow-x: hidden;
-                
+                overflow-x: hidden;
+
             }
             .logelement {
                 color: yellow;
@@ -136,7 +140,7 @@
                 background-size: 100% 100%;
                 z-index: 2;
 
-             }
+            }
 
             #startpanel {
                 position: absolute;
@@ -287,7 +291,7 @@
                 cursor: pointer;
                 background-color: lightblue;
             }
-          
+
             .dead {
                 opacity: .4;
             }
@@ -403,10 +407,10 @@
 
             function startgame() {
 
-                 enemy.party = new party();
+                enemy.party = new party();
 
 
- 
+
 
                 var ncharacterFactory = new characterFactory();
                 var ncharacters = lexicon.characters;
@@ -442,7 +446,7 @@
                 player.setEnemy(enemy);
 
             }
-            
+
         </script>
 
         <script src="game/logic/game.js"></script>

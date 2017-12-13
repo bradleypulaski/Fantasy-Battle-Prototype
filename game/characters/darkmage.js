@@ -78,6 +78,13 @@ function darkmage() {
 
     this.abilities = {
         "darkblast": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 140;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -85,6 +92,13 @@ function darkmage() {
             target.takeDamage("dark", damage);
         },
         "shadowflame": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 8) {
                 return false;
             }
@@ -105,6 +119,13 @@ function darkmage() {
             target.takeDamage("fire", damage);
         },
         "ominouswinds": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 12) {
                 return false;
             }

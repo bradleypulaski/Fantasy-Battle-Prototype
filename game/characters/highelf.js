@@ -74,6 +74,13 @@ function highelf() {
 
     this.abilities = {
         "radiantspear": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 80;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -81,6 +88,13 @@ function highelf() {
             target.takeDamage("light", damage);
         },
         "chromawave": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 5) {
                 return false;
             }
@@ -93,6 +107,13 @@ function highelf() {
             }
         },
         "piercingarrows": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 10) {
                 return false;
             }

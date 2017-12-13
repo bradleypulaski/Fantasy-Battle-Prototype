@@ -78,6 +78,13 @@ function fireelemental() {
 
     this.abilities = {
         "firebullet": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 180;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -96,6 +103,13 @@ function fireelemental() {
             }
         },
         "lavastream": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 15) {
                 return false;
             }
@@ -112,6 +126,13 @@ function fireelemental() {
             target.status[burning.name] = burning;
         },
         "firestorm": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 30) {
                 return false;
             }

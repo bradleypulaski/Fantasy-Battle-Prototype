@@ -74,6 +74,13 @@ function lightmage() {
 
     this.abilities = {
         "lightpierce": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 130;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -81,6 +88,13 @@ function lightmage() {
             target.takeDamage("light", damage);
         },
         "heal": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 9) {
                 return false;
             }
@@ -91,6 +105,13 @@ function lightmage() {
             }
         },
         "healinglight": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 11) {
                 return false;
             }

@@ -20,8 +20,7 @@ function enemy() {
     }
 
     this.startTurn = function () {
-        console.log("enemy turn started");
-        this.party.startTurn();
+         this.party.startTurn();
     }
 
     this.endTurn = function () {
@@ -35,6 +34,8 @@ function enemy() {
     }
     this.declareMoves = function () {
         var key;
+        console.log(this.party.party);
+        console.log(this.party.moveQeue);
          for (key in this.party.moveQeue) {
             var character = this.party.moveQeue[key];
             // TODO get character and ability json objects and choose appropriate moves for ai

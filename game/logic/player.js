@@ -19,6 +19,14 @@ function player() {
     }
     this.endTurn = function () {
         var end = this.party.endTurn();
+        console.log(this.party.moveQeue);
+        
+        if (!end) {
+            var first = this.party.moveQeue[0];
+
+            var id = first.id;
+            $(".characterpanel[data-id='" + id + "']").addClass("active");
+        }
         return end;
     }
 }

@@ -78,6 +78,13 @@ function merfolk() {
 
     this.abilities = {
         "tritonstab": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 90;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -85,6 +92,13 @@ function merfolk() {
             target.takeDamage("water", damage);
         },
         "icespear": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 6) {
                 return false;
             }
@@ -105,6 +119,13 @@ function merfolk() {
             }
         },
         "coolingwater": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 12) {
                 return false;
             }

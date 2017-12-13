@@ -69,6 +69,13 @@ function liche() {
 
     this.abilities = {
         "soulstrike": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 15) {
                 return false;
             }
@@ -78,6 +85,13 @@ function liche() {
             target.takeSoulDamage("dark", damage);
         },
         "entropy": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 20) {
                 return false;
             }
@@ -90,6 +104,13 @@ function liche() {
             target.status[entropy.name] = entropy;
         },
         "absorb": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var magic = target.magic;
             if (magic > 10) {
                 magic = 10;

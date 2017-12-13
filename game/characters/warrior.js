@@ -73,6 +73,13 @@ function warrior() {
 
     this.abilities = {
         "swordstrike": function (target) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             var damage = 100;
             if (this.status.hasOwnProperty('slow')) {
                 damage = Math.floor(damage * .66666);
@@ -80,6 +87,13 @@ function warrior() {
             target.takeDamage("earth", damage);
         },
         "armor": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 8) {
                 return false;
             }
@@ -90,6 +104,13 @@ function warrior() {
             }
         },
         "rally": function (party) {
+            
+            if (this.status.hasOwnProperty('illusion')) {
+                var irng = arng(0, 100);
+                if (irng < 51) {
+                    return true
+                }
+            }
             if (this.parent.magic < 5) {
                 return false;
             }
