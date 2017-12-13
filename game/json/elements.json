@@ -1,0 +1,32 @@
+{
+    "light": {
+        "description": "Light is the element of holy practitioners. Light mages, angels and high elves all have the ability to use light mana.  Light is darkness’ bane and visa versa, both counter each other.  Light warriors can use light offensively as piercing rays to destroy their enemies. Light can also be used to heal wounds, relieve ailments and embolden the party.  This versatility makes light a very powerful magic and ensures the light magician will be on the winning side.",
+        "weaknesses": ["dark"],
+        "aptitudes": ["healing", "offensive", "buffs", "status healing"]
+    },
+    "dark": {
+        "description": "Dark magic is that of entropy and discord.  Dark magic is used by liches, dark elves, dark mages and vampires.  The element of darkness specializes in weakening enemies and inflicting status ailments. It can also be used to counter healing and light magic.  Darkness can also be used offensively with dark flames, this makes Dark magic very versatile and a useful addition to any party.",
+        "weaknesses": ["light", "fire"],
+        "aptitudes": ["offensive", "debuffs", "status inflictment"]
+    },
+    "water": {
+        "description": "Water magic is used by merfolk, fairies and water mages.  The water element specializes in damage and illusion.  It can be used to freeze enemies buying you time. And can be used to trick enemies with illusions.",
+        "weaknesses": ["air", "earth"],
+        "aptitudes": ["offensive", "freezing", "illusion"]
+    },
+    "earth": {
+        "description": "Earth is used by warriors and golems.  Earth specializes in offensively crushing your foes with the power of earth.  More importantly earth can be used to fortify your party with stone armor.  Earth is the perfect addition to your party to protect your allies from damage.",
+        "weaknesses": ["water"],
+        "aptitudes": ["offensive", "fortification"]
+    },
+    "air": {
+        "description": "The air elemental magic is used by Griffins and air elementals.  Air can be used offensively but isn’t all that damage inducing.  Air’s true potential comes in buffs.  You can speed up your parties with a gust of wind giving them extra turns.  It can also be used to heal status ailments.",
+        "weaknesses": ["earth", "fire"],
+        "aptitudes": ["buffs", "offensive", "status healing"]
+    },
+    "fire": {
+        "description": "The fire elemental magic is used by fire mages and fire elementals.  Fire’s main bread and butter is damage. Fire inflicts major damage and can inflict burning and panic.  With a fire ally you can burn your foes with an inferno of flame.",
+        "weaknesses": ["water"],
+        "aptitudes": ["offensive", "status infliction"]
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "slow": {
+        "description": "Slow lowers damage by 1/3",
+        "type": "debuff",
+        "turns": 1
+    },
+    "panic": {
+        "description": "Panic lowers defense by 1/3",
+        "type": "debuff",
+        "turns": 2
+    },
+    "burning": {
+        "description": "at the end of characters turn take 1/10 of maximum health of damage",
+        "type": "ailment",
+        "turns": 999
+    },
+    "freezing": {
+        "description": "character loses 1 turn",
+        "type": "ailment",
+        "turns": 1
+    },
+    "haste": {
+        "description": "character gains 1 turn",
+        "type": "buff",
+        "turns": 1
+    },
+    "armor": {
+        "description": "character gains 200 armor",
+        "type": "buff",
+        "turns": 999
+    },
+    "stone armor": {
+        "description": "character gains 500 armor",
+        "type": "buff",
+        "turns": 999
+    },
+    "entropy": {
+        "description": "character loses 1/8 of maximum health each turn",
+        "type": "ailment",
+        "turns": 3
+    },
+    "healinglight": {
+        "description": "character gains 1/10 of maximum health each turn",
+        "type": "buff",
+        "turns": 4
+    },
+    "invisibility": {
+        "description": "character cannot be targeted by attack",
+        "type": "buff",
+        "turns": 1
+    },
+    "illusion": {
+        "description": "character uses random attack on random target, including allies",
+        "type": "ailment",
+        "turns": 1
+    }
+}

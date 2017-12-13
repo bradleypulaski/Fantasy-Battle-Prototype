@@ -1,0 +1,98 @@
+{
+    "airelemental": {
+        "description": "",
+        "type": "air",
+        "weaknesses": ["fire", "earth"],
+        "abilities": ["gust", "haste", "hurricane"]
+    },
+    "angel": {
+        "description": "",
+        "type": "light",
+        "weaknesses": ["dark"],
+        "abilities": ["holylight", "wingguard", "revive"]
+    },
+    "darkelf": {
+        "description": "",
+        "type": "dark",
+        "weaknesses": ["light", "fire"],
+        "abilities": ["cutlassstrike", "darkblizzard", "icyterror"]
+    },
+    "darkmage": {
+        "description": "",
+        "type": "dark",
+        "weaknesses": ["light", "fire"],
+        "abilities": ["darkblast", "shadowflame", "ominouswinds"]
+    },
+    "fairy": {
+        "description": "fairies only take soul damage and regular damage 50% of the time",
+        "type": "water",
+        "weaknesses": ["air", "ground"],
+        "abilities": ["swarm", "pheramones", "manabloom"]
+    },
+    "fireelemental": {
+        "description": "",
+        "type": "fire",
+        "weaknesses": ["water"],
+        "abilities": ["firebullet", "lavastream", "firestorm"]
+    },
+    "firemage": {
+        "description": "",
+        "type": "fire",
+        "weaknesses": ["water"],
+        "abilities": ["flameshot", "incinerate", "lightningbolt"]
+    },
+    "golem": {
+        "description": "golem does not take soul damage",
+        "type": "earth",
+        "weaknesses": ["water"],
+        "abilities": ["rockslide", "stonearmor", "explode"]
+    },
+    "griffin": {
+        "description": "",
+        "type": "air",
+        "weaknesses": ["fire", "earth"],
+        "abilities": ["razerwind", "roost", "frenzy"]
+    },
+    "highelf": {
+        "description": "",
+        "type": "light",
+        "weaknesses": ["dark"],
+        "abilities": ["radiantspear", "chromawave", "piercingarrows"]
+    },
+    "liche": {
+        "description": "liche cannot be slowed or panic",
+        "type": "dark",
+        "weaknesses": ["light", "fire"],
+        "abilities": ["soulstrike", "entropy", "absorb"]
+    },
+    "lightmage": {
+        "description": "",
+        "type": "light",
+        "weaknesses": ["dark"],
+        "abilities": ["lightpierce", "heal", "healinglight"]
+    },
+    "merfolk": {
+        "description": "",
+        "type": "water",
+        "weaknesses": ["air", "ground"],
+        "abilities": ["tritonstab", "icespear", "coolingwater"]
+    },
+    "vampire": {
+        "description": "",
+        "type": "dark",
+        "weaknesses": ["light", "fire"],
+        "abilities": ["siphon", "mistform", "soulsnare"]
+    },
+    "warrior": {
+        "description": "",
+        "type": "earth",
+        "weaknesses": ["water"],
+        "abilities": ["swordstrike", "armor", "rally"]
+    },
+    "watermage": {
+        "description": "",
+        "type": "water",
+        "weaknesses": ["air", "ground"],
+        "abilities": ["waterjet", "illusion", "invisibility", "blizzard"]
+    }
+}

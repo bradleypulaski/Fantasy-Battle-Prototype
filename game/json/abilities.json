@@ -1,0 +1,394 @@
+{
+    "gust": {
+        "description": "when used air elemental gains 12.5 magic",
+        "damage": 80,
+        "element": "air",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "haste": {
+        "description": "each member of party has 50% chance to gain haste",
+        "damage": 0,
+        "element": "air",
+        "cost": 25,
+        "scope": "AOE",
+        "type": "support"
+    },
+    "hurricane": {
+        "description": "each member of enemy party takes damage and has 50% chance to be slowed",
+        "damage": 180,
+        "element": "air",
+        "cost": 25,
+        "scope": "AOE",
+        "type": "offensive"
+    },
+    "holylight": {
+        "description": "offensive light attack",
+        "damage": 150,
+        "element": "light",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "wingguard": {
+        "description": "angel gains 200 health and 200 armor",
+        "damage": 0,
+        "element": "light",
+        "cost": 10,
+        "scope": "self",
+        "type": "support"
+    },
+    "revive": {
+        "description": "revive party member",
+        "damage": 0,
+        "element": "light",
+        "cost": 20,
+        "scope": "single",
+        "type": "support"
+    },
+    "cutlassstrike": {
+        "description": "offensive dark attack",
+        "damage": 120,
+        "element": "dark",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "darkblizzard": {
+        "description": "damages and slows target",
+        "damage": 60,
+        "element": "dark",
+        "cost": 5,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "icyterror": {
+        "description": "damages and freezes target",
+        "damage": 100,
+        "element": "dark",
+        "cost": 10,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "darkblast": {
+        "description": "offensive dark attack",
+        "damage": 140,
+        "element": "dark",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "shadowflame": {
+        "description": "offensive fire attack with 25% chance of burning",
+        "damage": 180,
+        "element": "fire",
+        "cost": 8,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "ominouswinds": {
+        "description": "area dark attack that damages and slows enemies",
+        "damage": 60,
+        "element": "dark",
+        "cost": 12,
+        "scope": "AOE",
+        "type": "offensive"
+    },
+    "swarm": {
+        "description": "water attack that hits 1 - 5 times",
+        "damage": 20,
+        "element": "water",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "pheramones": {
+        "description": "casts illusion on target",
+        "damage": 0,
+        "element": "water",
+        "cost": 12,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "manabloom": {
+        "description": "increases partys magic and has the potential to massively increases parties magic",
+        "damage": 0,
+        "element": "water",
+        "cost": 30,
+        "scope": "AOE",
+        "type": "support"
+    },
+    "firebullet": {
+        "description": "fire damage and 25% chance to cause burning",
+        "damage": 180,
+        "element": "fire",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "lavastream": {
+        "description": "fire damage and causes burning",
+        "damage": 210,
+        "element": "fire",
+        "cost": 15,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "firestorm": {
+        "description": "fire damage to enemy party and 50% chance to cause burning",
+        "damage": 200,
+        "element": "fire",
+        "cost": 30,
+        "scope": "AOE",
+        "type": "offensive"
+    },
+    "flameshot": {
+        "description": "fire damage to single target",
+        "damage": 150,
+        "element": "fire",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "incinerate": {
+        "description": "fire damage to single target and causes burning",
+        "damage": 180,
+        "element": "fire",
+        "cost": 10,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "lightningbolt": {
+        "description": "tremendous fire damage to single target and causes burning, only hits 50% of the time",
+        "damage": 500,
+        "element": "fire",
+        "cost": 20,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "rockslide": {
+        "description": "earth attack that hits 1 to 5 times",
+        "damage": 15,
+        "element": "earth",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "stonearmor": {
+        "description": "adds 500 armor to target",
+        "damage": 0,
+        "element": "earth",
+        "cost": 10,
+        "scope": "single",
+        "type": "support"
+    },
+    "explode": {
+        "description": "golem sacrifices itself to deal potentially massive damage to enemy team",
+        "damage": "???",
+        "element": "earth",
+        "cost": 20,
+        "scope": "AOE",
+        "type": "offensive"
+    },
+    "razerwind": {
+        "description": "offensive air attack",
+        "damage": 120,
+        "element": "air",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "roost": {
+        "description": "heals target 50 hp and removes all ailments and debuffs",
+        "damage": 0,
+        "element": "air",
+        "cost": 5,
+        "scope": "single",
+        "type": "support"
+    },
+    "frenzy": {
+        "description": "air attack that does damage and has 25% chance to cause panic",
+        "damage": 200,
+        "element": "air",
+        "cost": 10,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "radiantspear": {
+        "description": "offensive light attack",
+        "damage": 80,
+        "element": "light",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "chromawave": {
+        "description": "removes targets ailments",
+        "damage": 0,
+        "element": "light",
+        "cost": 5,
+        "scope": "single",
+        "type": "support"
+    },
+    "piercingarrows": {
+        "description": "light attack that damages each enemy party member",
+        "damage": 150,
+        "element": "light",
+        "cost": 10,
+        "scope": "AOE",
+        "type": "offensive"
+    },
+    "soulstrike": {
+        "description": "dark attack that deals soul damage",
+        "damage": 200,
+        "element": "dark",
+        "cost": 15,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "entropy": {
+        "description": "dark attack that casts entropy on target",
+        "damage": 0,
+        "element": "dark",
+        "cost": 20,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "absorb": {
+        "description": "absorbs up to 10 mp from target",
+        "damage": 0,
+        "element": "dark",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "lightpierce": {
+        "description": "offensive light attack",
+        "damage": 130,
+        "element": "light",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "heal": {
+        "description": "heals target 200 health",
+        "damage": 0,
+        "element": "light",
+        "cost": 9,
+        "scope": "single",
+        "type": "support"
+    },
+    "healinglight": {
+        "description": "casts healinglight on party",
+        "damage": 0,
+        "element": "light",
+        "cost": 11,
+        "scope": "AOE",
+        "type": "support"
+    },
+    "tritonstab": {
+        "description": "offensive water attack",
+        "damage": 90,
+        "element": "water",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "icespear": {
+        "description": "offensive water attack with 25% chance to cause freezing",
+        "damage": 175,
+        "element": "water",
+        "cost": 6,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "coolingwater": {
+        "description": "heals 100 health and cures ailments",
+        "damage": 0,
+        "element": "water",
+        "cost": 12,
+        "scope": "single",
+        "type": "support"
+    },
+    "siphon": {
+        "description": "dark damaging attack that heals vampire 50% of damage taken by enemy",
+        "damage": 100,
+        "element": "dark",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "mistform": {
+        "description": "casts invisibility on self",
+        "damage": 0,
+        "element": "dark",
+        "cost": 5,
+        "scope": "self",
+        "type": "support"
+    },
+    "soulsnare": {
+        "description": "dark damaging attack that heals vampire 50% of damage taken by enemy",
+        "damage": 250,
+        "element": "dark",
+        "cost": 15,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "swordstrike": {
+        "description": "offensive earth attack",
+        "damage": 100,
+        "element": "earth",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "armor": {
+        "description": "party gains 200 armor",
+        "damage": 0,
+        "element": "earth",
+        "cost": 8,
+        "scope": "AOE",
+        "type": "support"
+    },
+    "rally": {
+        "description": "party gains 10 magic",
+        "damage": 0,
+        "element": "earth",
+        "cost": 5,
+        "scope": "AOE",
+        "type": "support"
+    },
+    "waterjet": {
+        "description": "offensive water attack",
+        "damage": 110,
+        "element": "water",
+        "cost": 0,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "illusion": {
+        "description": "casts illusion on enemy",
+        "damage": 0,
+        "element": "water",
+        "cost": 20,
+        "scope": "single",
+        "type": "offensive"
+    },
+    "invisibility": {
+        "description": "casts invisibility on ally",
+        "damage": 0,
+        "element": "water",
+        "cost": 20,
+        "scope": "single",
+        "type": "support"
+    },
+    "blizzard": {
+        "description": "damages enemy party and has 50% change to cause freezing",
+        "damage": 120,
+        "element": "water",
+        "cost": 30,
+        "scope": "AOE",
+        "type": "offensive"
+    }
+}

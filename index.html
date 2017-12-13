@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>RPG Game</title>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <link href="game/includes/lightbox/release/featherlight.min.css" rel="stylesheet"/>
+        <script src="game/includes/lightbox/release/featherlight.min.js"></script>
+        <script src="game/logic/lexicon.js"></script>
+        <script src="game/logic/logic.js"></script>
+        <script src="game/logic/status.js"></script>
+        <script src="game/characters/airelemental.js"></script>
+        <script src="game/characters/angel.js"></script>
+        <script src="game/characters/darkelf.js"></script>
+        <script src="game/characters/darkmage.js"></script>
+        <script src="game/characters/fairy.js"></script>
+        <script src="game/characters/fireelemental.js"></script>
+        <script src="game/characters/firemage.js"></script>
+        <script src="game/characters/golem.js"></script>
+        <script src="game/characters/griffin.js"></script>
+        <script src="game/characters/highelf.js"></script>
+        <script src="game/characters/liche.js"></script>
+        <script src="game/characters/lightmage.js"></script>
+        <script src="game/characters/merfolk.js"></script>
+        <script src="game/characters/vampire.js"></script>
+        <script src="game/characters/watermage.js"></script>
+        <script src="game/characters/warrior.js"></script>
+        <script src="game/logic/party.js"></script>
+        <script src="game/logic/player.js"></script>
+        <script src="game/logic/enemy.js"></script>
+        <script src="game/logic/characterFactory.js"></script>
+    </head>
+
+
+    <body>
+
+        <div id="startgame">
+            <div id="characterselectioncontainter">
+
+            </div>
+            <div id="startpanel">
+                <div id="continue">Continue</div>
+                <h1>Select Your Characters</h1>
+                <div id="startrightinfo"></div>
+            </div>
+        </div>
+
+        <div id="game">
+            <div id="enemy"></div> 
+            <div id="currentstatus"></div> 
+            
+            <div id="player"></div> 
+            <div id="gamelog"></div> 
+        </div>
+
+        <div id="abilities">
+            test
+        </div>
+
+        <style>
+
+
+            #game {
+                background: url("game/images/bg.png");
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            #enemy {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 80%;
+                height: 200px;
+                background-color: black;
+                border-bottom: 1px solid #f6fcb5;
+            }
+            #player {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 80%;
+                height: 200px;
+                background-color: black;
+                border-top: 1px solid #f6fcb5;
+            }
+            #currentstatus {
+                position: fixed;
+                top: 200px;
+                left: 0;
+                width: 20%;
+                 background-color: black;
+                 display: none;
+             }
+             #currentstatus h1 {
+                   font-family: MiddleEarth;
+                color: #f6fcb5;  
+             }
+             #currentstatus h3 {
+                 color: #f6fcb5;  
+             }
+             #currentstatus p {
+                 color: white;  
+             }
+            #gamelog {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 20%;
+                height: 100%;
+                background-color: black;
+                border-left: 1px solid lightgoldenrodyellow;
+                overflow: scroll;
+                    overflow-x: hidden;
+                
+            }
+            .logelement {
+                color: yellow;
+            }
+            @font-face {
+                font-family: MiddleEarth;
+                src: url("game/fonts/MiddleEarth.ttf");
+            }
+            #startgame {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background: url("game/images/startgame.jpg");
+                background-size: 100% 100%;
+                z-index: 2;
+
+             }
+
+            #startpanel {
+                position: absolute;
+                top: 10px;
+                right: 35px;
+                width: 500px;
+
+            }
+
+            #startpanel h1 {
+                color:white;
+                font-family: MiddleEarth;
+                color: #f6fcb5;
+                text-shadow: 0px 4px #000;
+            }
+
+            #startrightinfo {
+                padding: 35px;
+                width: 400px;
+                color: white;
+            }
+
+
+
+
+            #characterselectioncontainter {
+                width: 600px;
+                height: 100%;
+                overflow: scroll;
+            }
+
+            .characterchoice {
+                width: 100%;
+                height: 200px;
+                border: 1px solid grey;
+            }
+
+            .characterchoice:hover {
+                cursor: pointer;
+                background-color: darkcyan;
+            }
+            .characterchoice div {
+                width: 200px;
+                height: 200px;
+                display: inline-block;
+                background-size: 200px 200px;
+                float: left;
+            }
+
+            .selected {
+
+                background-color: darkblue;
+            }
+
+
+            .characterinfo {
+                margin-left: 15px;
+                display: inline-block;
+                color: white;
+                float: left;
+                line-height: 4px;
+            }
+
+            .characterinfo h6 {
+                line-height: 12px;
+
+            }
+
+            #continue {
+                display: none;
+                width: 200px;
+                text-align: center;
+                background-color: yellow;
+                padding: 10px;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+
+            #continue:hover {
+                background-color: yellowgreen;
+                cursor: pointer;
+            }
+
+
+            .characterpanel {
+                float: left;
+                width: 33%;
+            }
+
+            .characterimg {
+                height: 200px;
+                width: 200px;
+                float: left;
+                background-size: 200px 200px;
+            }
+            .characterpanelright {
+                height: 200px;
+                width: auto;
+                min-width: 50%;
+                float: left;
+                padding-left: 10px;
+            }
+
+            .characterpanelrightinfo {
+                float: left;
+            }
+            .actions {
+                float: left;
+                width: 50%;
+            }
+            .attack {
+                display: none;
+                background-color: yellow;
+                color: black;
+                font-weight: bold;
+                border-radius: 5px;
+                padding: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                margin-top: 45px;
+                width: 80px;
+            }
+            .attack:hover {
+                cursor: pointer;
+                background-color: yellowgreen;
+
+            }
+            .active {
+                border: 1px solid yellow;
+            }
+            .active .attack {
+                display: block;
+            }
+            .enemytarget {
+                border: 1px solid red;
+                background-color: darkred;
+            }
+            .enemytarget:hover {
+                cursor: pointer;
+                background-color: lightsalmon;
+            }
+            .allytarget {
+                border: 1px solid blue;
+                background-color: darkblue;
+            }
+            .allytarget:hover {
+                cursor: pointer;
+                background-color: lightblue;
+            }
+          
+            .dead {
+                opacity: .4;
+            }
+            .characterpanelright p {
+                color: white;
+            }
+            .characterpanelright h3 {
+                color: white;
+            }
+            .health {
+                color: red;
+            }
+            .armor {
+                color: yellow;
+            }
+            .magic {
+                color: lightskyblue;
+            }
+            .featherlight-close-icon {
+                display: none  !important;
+
+            }
+
+            .featherlight-content {
+                background-color: #333 !important;
+                padding: 15px  !important;
+            }
+
+            #abilities h1 {
+                font-family: MiddleEarth;
+                color: #f6fcb5;
+                text-shadow: 0px 4px #000;
+            }
+
+
+            .ability {
+                background-color: yellow;
+                padding: 5px;
+                width: 100%;
+                text-align: center;
+                border: 1px solid #333;
+                font-weight: bold;
+                font-size: 18pt;
+            }
+            .ability:hover {
+                background-color: yellowgreen;
+                cursor: pointer;
+            }
+            .airelemental {
+                background-image: url("game/images/characters/airelemental.jpg");
+            }
+            .angel {
+                background-image: url("game/images/characters/angel.jpg");
+            }
+            .darkelf {
+                background-image: url("game/images/characters/darkelf.jpg");
+            }
+            .darkmage {
+                background-image: url("game/images/characters/darkmage.jpg");
+            }
+            .fairy {
+                background-image: url("game/images/characters/fairy.jpg");
+            }
+            .fireelemental {
+                background-image: url("game/images/characters/fireelemental.jpg");
+            }
+            .firemage {
+                background-image: url("game/images/characters/firemage.jpg");
+            }
+            .golem {
+                background-image: url("game/images/characters/golem.jpg");
+            }
+            .griffin {
+                background-image: url("game/images/characters/griffin.jpg");
+            }
+            .highelf {
+                background-image: url("game/images/characters/highelf.jpg");
+            }
+            .liche {
+                background-image: url("game/images/characters/liche.jpg");
+            }
+            .lightmage {
+                background-image: url("game/images/characters/lightmage.jpg");
+            }
+            .merfolk {
+                background-image: url("game/images/characters/merfolk.jpg");
+            }
+            .vampire {
+                background-image: url("game/images/characters/vampire.jpg");
+            }
+            .warrior {
+                background-image: url("game/images/characters/warrior.jpg");
+            }
+            .watermage {
+                background-image: url("game/images/characters/watermage.jpg");
+            }
+
+
+        </style> 
+
+
+
+        <script>
+            lexicon = new lexicon();
+            lexicon.populate();
+
+            player = new player();
+            currenttarget = null;
+
+            enemy = new enemy();
+            wins = 0;
+            losses = 0;
+
+            function startgame() {
+
+                 enemy.party = new party();
+
+
+ 
+
+                var ncharacterFactory = new characterFactory();
+                var ncharacters = lexicon.characters;
+                var keys = Object.keys(ncharacters);
+
+                var rng1 = arng(0, keys.length - 1);
+                var rng2 = arng(0, keys.length - 1);
+                var rng3 = arng(0, keys.length - 1);
+                while (rng1 === rng2) {
+                    rng2 = arng(0, keys.length - 1);
+                }
+                while (rng3 === rng2 || rng3 === rng1) {
+                    rng3 = arng(0, keys.length - 1);
+                }
+
+
+
+
+                e1 = ncharacterFactory.getCharacter(keys[rng1]);
+                e2 = ncharacterFactory.getCharacter(keys[rng2]);
+                e3 = ncharacterFactory.getCharacter(keys[rng3]);
+
+
+
+                enemy.addPartyMember(e1);
+                enemy.addPartyMember(e2);
+                enemy.addPartyMember(e3);
+
+                player.lexicon = lexicon.getLexicon();
+                enemy.lexicon = lexicon.getLexicon();
+
+                enemy.setEnemy(player);
+                player.setEnemy(enemy);
+
+            }
+            
+        </script>
+
+        <script src="game/logic/game.js"></script>
+
+    </body>
+</html>
