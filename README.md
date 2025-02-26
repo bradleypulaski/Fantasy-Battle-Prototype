@@ -6,4 +6,4 @@ You choose three characters team and fight an AI's team.
 Each character has 3 moves and each living creature gets a round before the turn ends.
 
 # Link to Play
-https://bradleypulaski.github.io/week-4-game/
+https://bradleypulaski.github.io/Fantasy-Battle-Prototype/
